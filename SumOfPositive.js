@@ -24,8 +24,10 @@
 The acc (accumulator) keeps the running total, and current represents the current element being processed.
 */
 /*
-reduce(callbackFn)
-reduce(callbackFn, initialValue)
+array.reduce(function(accumulator, currentValue, index, array) {
+Your logic here
+}, initialValue);
+
  */
 // ---------------------------------------------------------------------------------------
 function PositiveSum(arr) {
