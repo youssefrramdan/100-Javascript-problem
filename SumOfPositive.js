@@ -7,7 +7,7 @@
 // Add the number to result if positive
 // return the result of
 //-------------------------------------------------------
-// Another Solution With filiter
+// Another Solution With filiter and reduce 
 // --> step 1
 /*The filter() method of an array creates a shallow copy of the original array
   based on a condition specified in a callback function.
@@ -30,6 +30,9 @@ Your logic here
 
  */
 // ---------------------------------------------------------------------------------------
+//Another Solution with reduce only
+// ---------------------------------------------------------------------------------------
+
 function PositiveSum(arr) {
   let result = 0;
   for (let i = 0; i < arr.length; i++) {
@@ -44,4 +47,20 @@ function PositiveSum(arr) {
 function SumOfpositiveWithFiltter(arr) {
   return arr.filter((x) => x > 0).reduce((acc, current) => acc + current , 0);
 }
-console.log(SumOfpositiveWithFiltter([1, -4, 3, 7, 12]));
+// console.log(SumOfpositiveWithFiltter([1, -4, 3, 7, 12]));
+
+//---------------------------------------------------------
+function positiveSum(arr) {
+  return arr.reduce(function(acc, currentValue) {
+    return currentValue > 0 ? acc + currentValue : acc;
+  }, 0);
+}
+//-----------------------------------------
+function PositiveSum(arr) {
+  return arr.reduce((acc , currentValue) =>{
+    return currentValue > 0 ? acc + currentValue : acc 
+  },0);
+
+  }
+  console.log(PositiveSum([1, -4, 3, 7, 12]));
+  
