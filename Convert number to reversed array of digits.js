@@ -12,20 +12,26 @@
 // Reverse the Array: The array of digits is reversed to change the order of the digits.
 // Convert the Digits to Numbers: Using map(Number), each digit in the reversed array is converted back into a number.
 // Return the Result: The final output is an array of digits, reversed and converted back into numbers.
+//------------------------------------------------------------
+// Solution 3 :-
+// 1 .String(n):
+// Converts the number n into a string, so that each digit becomes an individual character.
+// 2 .Array.from(String(n), Number):
+// Array.from() creates an array from the string.
+// The second argument, Number, is a mapping function that converts each string character back into a number.
+//3 .reverse():
+// Reverses the order of the digits in the resulting array.
 
 function digitize1(number) {
   let initialArray = String(number).split("");
   let reversadArray = [];
-  
+
   for (let i = initialArray.length - 1; i >= 0; i--) {
-    
     reversadArray.push(Number(initialArray[i]));
   }
-  return reversadArray
+  return reversadArray;
 }
 console.log(digitize1(1234566789));
-
-
 
 function digitize2(number) {
   return String(number).split("").reverse().map(Number);
@@ -33,5 +39,13 @@ function digitize2(number) {
 console.log(digitize2(1234566789));
 
 function digitize3(number) {
-  return number.toString().split("").map((currentValue)=>Number(currentValue)).reverse();
+  return number
+    .toString()
+    .split("")
+    .map((currentValue) => Number(currentValue))
+    .reverse();
+}
+
+function digitize4(number) {
+  return Array.from(String(n), Number).reverse();
 }
