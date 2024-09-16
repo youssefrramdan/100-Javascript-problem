@@ -16,17 +16,19 @@
 function digitize1(number) {
   let initialArray = String(number).split("");
   let reversadArray = [];
-
+  
   for (let i = initialArray.length - 1; i >= 0; i--) {
-    reversadArray.push(initialArray[i]);
+    
+    reversadArray.push(Number(initialArray[i]));
   }
-  return Number(reversadArray.join(""));
+  return reversadArray
 }
 console.log(digitize1(1234566789));
 
 
 
 function digitize2(number) {
-  return Number(String(number).split("").reverse().map(Number));
+  return String(number).split("").reverse().map(Number);
 }
 console.log(digitize2(1234566789));
+
