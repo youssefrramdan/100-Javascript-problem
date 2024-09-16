@@ -11,9 +11,9 @@ function descendingOrder(n) {
     String(n)
       .split("")
       .map(Number)
-      .sort((a, b) => b - a) // Sort in descending order
+      .sort((a, b) => b - a) 
       .join("")
-  ); // Convert the result back into a number
+  );
 }
 
 console.log(descendingOrder(23423423423));
