@@ -1,37 +1,11 @@
-//Problem :--> You get an array of numbers, return the sum of all of the positives ones.
-//---------------------------------------------------------------------------------------
-//frist Solution
-// result = 0
-// loop --> arr
-// check if the number is positive or not
-// Add the number to result if positive
-// return the result of
-//-------------------------------------------------------
-// Another Solution With filiter and reduce 
-// --> step 1
-/*The filter() method of an array creates a shallow copy of the original array
-  based on a condition specified in a callback function.
-  This method returns a new array containing only the elements that pass the test implemented by the callback function.
-  -->we will use it to Filters the array, creating a new array that includes only elements greater than 0.
- */
-// array.filter(function(currentValue, index, array) {
-// Your logic here
-// }, thisArg);
-
-// --> step 2
-// the reduce() method
-/*-- >After filtering, this takes the resulting array and reduces it to a single value by adding all the elements together.
-The acc (accumulator) keeps the running total, and current represents the current element being processed.
-*/
-/*
-array.reduce(function(accumulator, currentValue, index, array) {
-Your logic here
-}, initialValue);
-
- */
+// Problem: You get an array of numbers. Return the sum of all positive ones.
 // ---------------------------------------------------------------------------------------
-//Another Solution with reduce only
-// ---------------------------------------------------------------------------------------
+// First Solution
+// - Initialize result to 0
+// - Loop through the array
+// - Check if the number is positive
+// - Add the positive number to result
+// - Return the result
 
 function PositiveSum(arr) {
   let result = 0;
@@ -42,25 +16,29 @@ function PositiveSum(arr) {
   }
   return result;
 }
-// console.log(PositiveSum([1, -4, 3 , 7, 12]));
+console.log(PositiveSum([1, -4, 3, 7, 12]));
 
-function SumOfpositiveWithFiltter(arr) {
-  return arr.filter((x) => x > 0).reduce((acc, current) => acc + current , 0);
+
+
+// Another Solution with filter and reduce
+// Step 1: Filter the array to include only positive numbers
+// - The filter() method creates a shallow copy of the array with elements that are greater than 0
+
+// Step 2: Reduce the filtered array to get the sum of its elements
+// - The reduce() method adds all elements together, starting with an initial value of 0
+
+function SumOfpositiveWithFilter(arr) {
+  return arr.filter((x) => x > 0).reduce((acc, current) => acc + current, 0);
 }
-// console.log(SumOfpositiveWithFiltter([1, -4, 3, 7, 12]));
+console.log(SumOfpositiveWithFilter([1, -4, 3, 7, 12]));
 
-//---------------------------------------------------------
+
+
+
+// Another Solution with reduce only
+// - The reduce() method is used directly to accumulate the sum of positive values
+// - If the current value is positive, add it to the accumulator; otherwise, keep the accumulator unchanged
+
 function positiveSum(arr) {
   return arr.reduce(function(acc, currentValue) {
-    return currentValue > 0 ? acc + currentValue : acc;
-  }, 0);
-}
-//-----------------------------------------
-function PositiveSum(arr) {
-  return arr.reduce((acc , currentValue) =>{
-    return currentValue > 0 ? acc + currentValue : acc 
-  },0);
-
-  }
-  console.log(PositiveSum([1, -4, 3, 7, 12]));
-  
+    return currentValue > 0 ? acc
