@@ -33,5 +33,5 @@ function digitize2(number) {
 console.log(digitize2(1234566789));
 
 function digitize3(number) {
-  return number.toString().split().map((currentValue)=>Number(currentValue)).reverse();
+  return number.toString().split("").map((currentValue)=>Number(currentValue)).reverse();
 }
