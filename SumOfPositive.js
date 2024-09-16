@@ -39,6 +39,8 @@ console.log(SumOfpositiveWithFilter([1, -4, 3, 7, 12]));
 // - The reduce() method is used directly to accumulate the sum of positive values
 // - If the current value is positive, add it to the accumulator; otherwise, keep the accumulator unchanged
 
-function positiveSum(arr) {
-  return arr.reduce(function(acc, currentValue) {
-    return currentValue > 0 ? acc
+function PositiveSum(arr) {
+  return arr.reduce((acc, currentValue) => {
+    return currentValue > 0 ? acc + currentValue : acc;
+  }, 0);
+}
