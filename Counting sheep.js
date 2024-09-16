@@ -57,3 +57,16 @@ console.log(countSheeps3(
   true, true, true, true,
   false, false, true, true]
 ));
+
+/*
+ * Solution 4: Using map method
+ * This function uses the `map` method to iterate over the array, incrementing a counter for each element in the array.
+ * Note: This solution does not correctly count `true` values, as it increments the counter for every element, not just `true` values.
+ */
+function countingSheep4(sheeps) {
+  let counter = 0;
+  sheeps.map((Sheep) => {
+    counter++;
+  });
+  return counter; // Added return statement to output the result
+}
