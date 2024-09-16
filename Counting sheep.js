@@ -44,7 +44,7 @@ console.log(countSheeps2(
 /* 
 * Solution 3: Using filter method
 * This function filters the array to keep only the `true` values and then returns the length of the resulting array.
-? Since the arrow function Value => Value returns the element itself, it will act as a filter to keep only the truthy values.
+! Since the arrow function Value => Value returns the element itself, it will act as a filter to keep only the truthy values.
 
 */
 let countSheeps3 = x => x.filter(Value => Value).length;
