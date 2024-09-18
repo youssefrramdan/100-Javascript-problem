@@ -32,7 +32,7 @@ console.log(
 
 function openOrSenior2(arr) {
   let newArray = [];
-   arr.map(([age, handicap]) => {
+    arr.map(([age, handicap]) => {
     age >= 55 && handicap > 7 ? newArray.push("Senior") : newArray.push("Open");
   });
   return newArray
